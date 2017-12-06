@@ -70,32 +70,42 @@ class LinkedList
   end
 
 
-  def find(index, nodes, counter = 1)
-    # current_node, counter = @head, 1
-    # # beats = ''
-    # # index.times do
-    # #   current_node = current_node.next_node
-    # # end
-    # # beats <<  current_node.data
-    # # while counter < nodes
-    # #   current_node = current_node.next_node
-    # #   beats << ' ' + current_node.data
-    # #   counter += 1
-    # # end
-    # # beats
-
+  def find(index, nodes)
     current_node = @head
     beats = ''
     index.times do
       current_node = current_node.next_node
     end
-    beats << current_node.data
-    (nodes).times do
+    beats <<  current_node.data
+    (nodes - 1).times do
       current_node = current_node.next_node
-      beats << ' ' + current_node.next_node.data
+      beats << ' ' + current_node.data
     end
     beats
+
+    # current_node = @head
+    # beats = ''
+    # index.times do
+    #   current_node = current_node.next_node
+    # end
+    # beats << current_node.data
+    # while counter <= (nodes)
+    #   current_node = current_node.next_node
+    #   beats << ' ' + current_node.data
+    #   counter += 1
+    # end
+    # beats
+  # end
   end
+
+
+  # def find(index, nodes)
+  #   current_node = @head
+  #   if
+  # end
+
+
+
 
   def includes?(data)
     current_node = @head

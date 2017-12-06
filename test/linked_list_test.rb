@@ -113,8 +113,9 @@ class LinkedListTest < Minitest::Test
 
     assert_equal 'woo', list.find(1, 1)
     assert_equal 'shi', list.find(2, 1)
-    assert_equal 'deep woo shi', list.find(0, 2)
+    assert_equal 'deep woo', list.find(0, 2)
     assert_equal 'woo shi shuu', list.find(1, 3)
+    refute_equal 'woo shi shuu', list.find(0, 3)
   end
 
   def test_include_returns_true_if_data_found
