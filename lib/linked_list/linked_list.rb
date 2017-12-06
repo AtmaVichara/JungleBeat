@@ -82,46 +82,25 @@ class LinkedList
       beats << ' ' + current_node.data
     end
     beats
-
-    # current_node = @head
-    # beats = ''
-    # index.times do
-    #   current_node = current_node.next_node
-    # end
-    # beats << current_node.data
-    # while counter <= (nodes)
-    #   current_node = current_node.next_node
-    #   beats << ' ' + current_node.data
-    #   counter += 1
-    # end
-    # beats
-  # end
   end
-
-
-  # def find(index, nodes)
-  #   current_node = @head
-  #   if
-  # end
-
-
 
 
   def includes?(data)
     current_node = @head
-    if current_node.data == data
-      return true
-    elsif current_node.data != data
-      while current_node.next_node != nil
-        current_node = current_node.next_node
-        if current_node.data == data
-          return true
-        else
-          false
-        end
-      end
-    end
-  end
+  #   if current_node.data == data
+  #     return true
+  #   elsif current_node.data != data
+  #     while current_node.next_node != nil
+  #       current_node = current_node.next_node
+  #       if current_node.data == data
+  #         return true
+  #       else
+  #         false
+  #       end
+  #     end
+  #   end
+  # end
+    
 
   def pop
     current_node = @head

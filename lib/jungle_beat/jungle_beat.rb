@@ -4,12 +4,9 @@ require "pry"
 
 class JungleBeat
 
-  attr_accessor :list,
 
-  def initialize(list = nil)
-    @list = list
+  def initialize
     @list = LinkedList.new
   end
-
 
 end
