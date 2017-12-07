@@ -64,7 +64,7 @@ class JungleBeatTest < Minitest::Test
     jb.prepend('doo')
 
     assert_equal 'doo deep doo ditt', jb.all
-  end 
+  end
 
   def test_append_can_not_take_more_than_4_chars
     jb = JungleBeat.new
@@ -79,6 +79,12 @@ class JungleBeatTest < Minitest::Test
     assert_equal 3, jb.append('tee tee tee mississippi')
   end
 
+  def test_play_returns_number_of_beats
+    jb = JungleBeat.new
+    jb.append('deep doo ditt')
+
+    assert_equal 3, jb.play
+  end
 
 
 end
