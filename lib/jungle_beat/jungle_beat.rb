@@ -17,9 +17,21 @@ class JungleBeat
   def append(data)
     split_data = data.split(' ')
     split_data.each do |split|
-      @list.append(split)
+      if split.length <= 4
+        @list.append(split)
+      end
     end
-    data
+    count
+  end
+
+  def prepend(data)
+    split_data = data.split(' ')
+    split_data.each do |split|
+      if split.length <= 4
+        @list.prepend(split)
+      end
+    end
+    count
   end
 
   def count
@@ -28,6 +40,10 @@ class JungleBeat
 
   def play
     `say -r 500 -v Boing "#{@list.to_string}"`
-  end 
+  end
+
+  def all
+    @list.to_string
+  end
 
 end

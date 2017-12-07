@@ -22,7 +22,7 @@ class JungleBeatTest < Minitest::Test
   def test_append_appends_new_data
     jb = JungleBeat.new
 
-    assert_equal "deep doo ditt", jb.append("deep doo ditt")
+    assert_equal 3, jb.append("deep doo ditt")
   end
 
   def test_list_returns_correct_value
@@ -50,5 +50,35 @@ class JungleBeatTest < Minitest::Test
 
     jb.play
   end
+
+  def test_all_prints_all_beats
+    jb = JungleBeat.new
+    jb.append('deep doo ditt')
+
+    assert_equal 'deep doo ditt', jb.all
+  end
+
+  def test_prepend_inserts_data_in_head
+    jb = JungleBeat.new
+    jb.append('deep doo ditt')
+    jb.prepend('doo')
+
+    assert_equal 'doo deep doo ditt', jb.all
+  end 
+
+  def test_append_can_not_take_more_than_4_chars
+    jb = JungleBeat.new
+    jb.append('tee tee tee mississippi')
+
+    assert_equal 'tee tee tee', jb.all
+  end
+
+  def test_append_does_not_count_words_more_than_4_chars
+    jb = JungleBeat.new
+
+    assert_equal 3, jb.append('tee tee tee mississippi')
+  end
+
+
 
 end

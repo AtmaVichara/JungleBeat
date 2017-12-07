@@ -11,17 +11,28 @@ class LinkedList
     @head = head
   end
 
-  def append(data)
-    current_node = @head
+  # def append(data)
+  #   current_node = @head
+  #   if @head.nil?
+  #     @head = Node.new(data)
+  #   else
+  #     while current_node.next_node != nil
+  #       current_node = current_node.next_node
+  #     end
+  #     current_node.next_node = Node.new(data)
+  #   end
+  #     data
+  # end
+
+  def append(data, current_node = @head)
     if @head.nil?
       @head = Node.new(data)
-    else
-      while current_node.next_node != nil
-        current_node = current_node.next_node
-      end
+    elsif current_node.next_node.nil?
       current_node.next_node = Node.new(data)
+    else
+      return if current_node.next_node.nil?
+      append(data, current_node.next_node)
     end
-      data
   end
 
   def prepend(data)
