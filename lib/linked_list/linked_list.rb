@@ -15,14 +15,6 @@ class LinkedList
     current_node = @head
     if @head.nil?
       @head = Node.new(data)
-    #
-    # elsif current_node.nil?
-    #   current_node = Node.new(data)
-    # else
-    #   current_node = current_node.next_node
-    #   append(data)
-    # end
-
     else
       while current_node.next_node != nil
         current_node = current_node.next_node
