@@ -15,6 +15,14 @@ class LinkedList
     current_node = @head
     if @head.nil?
       @head = Node.new(data)
+    #
+    # elsif current_node.nil?
+    #   current_node = Node.new(data)
+    # else
+    #   current_node = current_node.next_node
+    #   append(data)
+    # end
+
     else
       while current_node.next_node != nil
         current_node = current_node.next_node
@@ -87,20 +95,17 @@ class LinkedList
 
   def includes?(data)
     current_node = @head
-  #   if current_node.data == data
-  #     return true
-  #   elsif current_node.data != data
-  #     while current_node.next_node != nil
-  #       current_node = current_node.next_node
-  #       if current_node.data == data
-  #         return true
-  #       else
-  #         false
-  #       end
-  #     end
-  #   end
-  # end
-    
+    until current_node.data == data || current_node.next_node.nil?
+      current_node = current_node.next_node
+    end
+    if current_node.data == data
+      true
+    else
+      false
+    end
+  end
+
+
 
   def pop
     current_node = @head
